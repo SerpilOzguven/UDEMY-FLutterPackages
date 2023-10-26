@@ -42,6 +42,8 @@ dependencies:
   video_player: ^2.7.2
   cached_network_image: ^3.3.0
   photo_view: ^0.14.0
+  fdottedline_nullsafety: ^2.0.1
+
 
 
 

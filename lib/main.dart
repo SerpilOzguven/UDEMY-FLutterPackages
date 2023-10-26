@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_packages/packages/fdottedline.dart';
 import 'package:flutter_packages/packages/photo_view.dart';
 
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.blue,
       ),
-      home: const PhotoViewPage(),
+      home: const FdottedLinePage(),
     );
   }
 }
