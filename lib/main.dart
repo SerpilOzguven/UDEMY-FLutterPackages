@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_packages/packages/lottie.dart';
-
 
 
 void main() {
@@ -19,7 +17,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.blue,
       ),
-      home: const LottiePage(),
+      home: Scaffold(
+        appBar: AppBar(title: Text('Flutter Native Splash')),
+      ),
     );
   }
 }
