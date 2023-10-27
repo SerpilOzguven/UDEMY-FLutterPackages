@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_packages/packages/flutter_svg_page.dart';
+import 'package:flutter_packages/packages/connectivity_plus.dart';
+
 
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.blue,
       ),
-      home: const FlutterSvgPage(),
+      home: const ConnectivityPlusPage(),
     );
   }
 }
