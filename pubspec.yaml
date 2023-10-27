@@ -44,6 +44,7 @@ dependencies:
   photo_view: ^0.14.0
   fdottedline_nullsafety: ^2.0.1
   lottie: ^2.7.0
+  flutter_svg: ^2.0.8
   flutter_native_splash: ^2.3.4
 flutter_native_splash:
   color: "#42a5f5"
@@ -52,6 +53,8 @@ flutter_native_splash:
   image_dark: assets/ninja.png
   android: true
   ios: true
+
+
 
 
 
@@ -85,6 +88,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
      - assets/loading/downloading.json
+     - assets/monarch.svg
   #   - assets/ninja.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
