@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_packages/packages/connectivity_plus.dart';
+import 'package:flutter_packages/packages/intl_page.dart';
 
 
 
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.blue,
       ),
-      home: const ConnectivityPlusPage(),
+      home: const IntlPage(),
     );
   }
 }
