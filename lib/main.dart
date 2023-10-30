@@ -1,6 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_packages/packages/intl_page.dart';
 
+
+
+
+
+import 'package:flutter/material.dart';
+import 'package:flutter_packages/packages/map_launcher.dart';
 
 
 void main() {
@@ -19,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.blue,
       ),
-      home: const IntlPage(),
+      home: const MapLauncherPage(),
     );
   }
 }
