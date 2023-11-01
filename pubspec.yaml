@@ -51,6 +51,8 @@ dependencies:
   geolocator: ^10.1.0
   location: ^5.0.0
   map_launcher: ^3.0.1
+  google_maps_flutter: ^2.5.0
+
 
 
 
@@ -99,6 +101,7 @@ flutter:
   assets:
      - assets/loading/downloading.json
      - assets/monarch.svg
+     - assets/car.png
   #   - assets/ninja.png
 
   # An image asset can refer to one or more resolution-specific "variants", see

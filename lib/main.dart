@@ -1,10 +1,7 @@
 
-
-
-
-
 import 'package:flutter/material.dart';
-import 'package:flutter_packages/packages/map_launcher.dart';
+import 'package:flutter_packages/packages/home_page.dart';
+
 
 
 void main() {
@@ -23,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.blue,
       ),
-      home: const MapLauncherPage(),
+      home: const HomePage(),
     );
   }
 }
