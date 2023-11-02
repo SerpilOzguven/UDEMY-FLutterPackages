@@ -52,12 +52,13 @@ dependencies:
   location: ^5.0.0
   map_launcher: ^3.0.1
   google_maps_flutter: ^2.5.0
-
-
-
-
-
+  package_info_plus: ^4.2.0
   flutter_native_splash: ^2.3.4
+  device_info_plus: ^9.1.0
+  share_plus: ^7.2.1
+  file_picker: ^6.0.0
+  battery_plus: ^4.1.0
+  flutter_slidable: ^3.0.0
 flutter_native_splash:
   color: "#42a5f5"
   image: assets/ninja.png
