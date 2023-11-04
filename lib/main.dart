@@ -1,8 +1,17 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_packages/packages/home_page.dart';
+import 'package:flutter_packages/packages/hive/amountPage.dart';
 
-void main() {
+import 'package:flutter_packages/packages/hive/model/amount.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
+
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  Hive.registerAdapter(AmountModelAdapter());
+  await Hive.openBox<AmountModel>('amount');
   runApp(const MyApp());
 }
 
@@ -18,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.blue,
       ),
-      home: const HomePage(),
+      home: const AmountPage(),
     );
   }
 }
