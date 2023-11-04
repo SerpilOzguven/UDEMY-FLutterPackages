@@ -1,6 +1,6 @@
 import 'package:hive/hive.dart';
 
-part 'amount.g.dart';
+
 
 @HiveType(typeId: 0)
 class AmountModel extends HiveObject {
