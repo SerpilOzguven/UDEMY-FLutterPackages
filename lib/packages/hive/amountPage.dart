@@ -1,4 +1,6 @@
-// TODO Implement this library.// TODO Implement this library.
+// TODO Implement this library.// TODO Implement this library.// TODO Implement this library.// TODO Implement this library.
+
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_packages/packages/hive/hive_box.dart';
@@ -14,8 +16,10 @@ class AmountPage extends StatefulWidget {
 }
 
 class _AmountPageState extends State<AmountPage> {
+
   final textController = TextEditingController();
   final amountController = TextEditingController();
+
   var isPlus;
 
   @override
@@ -25,23 +29,24 @@ class _AmountPageState extends State<AmountPage> {
   }
 
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Hive'),
+        title: Text('Hive'),
       ),
       body: ValueListenableBuilder<Box<AmountModel>>(
-        valueListenable: HiveBox.getAmount.listenable();
+        valueListenable: HiveBox.getAmount().listenable(),
         builder: (context, box, widget) {
           var amounts = box.values.toList();
           return buildList(amounts);
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          addAmount(context,null);
-        },
+        onPressed: (){
+          addAmount(context, null);
+          },
         child: const Icon(Icons.add),
       ),
     );
@@ -50,24 +55,24 @@ class _AmountPageState extends State<AmountPage> {
   void addAmount(BuildContext context, AmountModel? amount) {
 
     if(amount != null){
-      textController.text = amount.name;
+      textController.text= amount.name;
       amountController.text = amount.amount.toString();
       isPlus = amount.isPlus;
     }
 
     showDialog(
       context: context,
-      builder: (context) => StatefulBuilder(builder: (context, setState) {
+      builder: (context)=>StatefulBuilder(builder: (context, setState){
         return AlertDialog(
           title: Column(
             children: [
-              TextFormField(
+              TextField(
                 controller: textController,
-                decoration: const InputDecoration(hintText: 'Baþlýk'),
+                decoration: InputDecoration(hintText: 'Baþlýk'),
               ),
-              TextFormField(
+              TextField(
                 controller: amountController,
-                decoration: const InputDecoration(hintText: 'Miktar'),
+                decoration: InputDecoration(hintText: 'Miktar'),
               ),
               RadioListTile(
                 value: true,
@@ -77,7 +82,7 @@ class _AmountPageState extends State<AmountPage> {
                     isPlus = value;
                   });
                 },
-                title: const Text('True'),
+                title:Text('True'),
               ),
               RadioListTile(
                 value: false,
@@ -87,15 +92,15 @@ class _AmountPageState extends State<AmountPage> {
                     isPlus = value;
                   });
                 },
-                title: const Text('False'),
+                title:Text('False'),
               ),
             ],
           ),
           actions: [
             ElevatedButton(
-              onPressed: () {
-                if(amount == null){
-                  // ekleme iþlemi
+              onPressed: (){
+                if(amount == null) {
+                  //ekleme iþlemi
                   var amount = AmountModel()
                     ..name = textController.text
                     ..amount = double.parse(amountController.text)
@@ -103,7 +108,7 @@ class _AmountPageState extends State<AmountPage> {
                   var box = HiveBox.getAmount();
                   box.add(amount);
                 }else{
-                  // güncelleme iþlemi
+                  //güncelleme iþlemi
                   amount
                     ..name = textController.text
                     ..amount = double.parse(amountController.text)
@@ -114,11 +119,11 @@ class _AmountPageState extends State<AmountPage> {
                 amountController.clear();
                 Navigator.pop(context);
               },
-              child:  amount == null ? const Text('Kaydet') : const Text('Güncelle'),
-              style: ElevatedButton.styleFrom(primary: Colors.red),
+              child:  amount == null ? const Text('Kaydet'): const Text('Güncelle'),
+              style: ElevatedButton.styleFrom(shadowColor: Colors.red),
             ),
             ElevatedButton(
-                onPressed: () {
+                onPressed: (){
                   Navigator.pop(context);
                 },
                 child: const Text('Vazgeç')),
@@ -129,16 +134,16 @@ class _AmountPageState extends State<AmountPage> {
   }
 
   Widget buildList(List<AmountModel> amounts) {
-    if (amounts.isEmpty) {
-      return const Center(
-        child: Text('Empty List'),
+    if (amounts.isEmpty){
+      return Center(child: Text('Empty List'),
       );
     } else {
       var totalAmount = amounts.fold<double>(
           0,
-              (previousValue, element) => element.isPlus
-              ? previousValue + element.amount
-              : previousValue - element.amount);
+          (previousValue, element) => element.isPlus
+            ? previousValue + element.amount
+            : previousValue - element.amount);
+
       var color;
       if (totalAmount > 0) {
         color = Colors.green;
@@ -174,15 +179,16 @@ class _AmountPageState extends State<AmountPage> {
                         ),
                         TextButton.icon(
                           onPressed: () {
-                            addAmount(context,amounts[index]);
+                            addAmount(context, amounts[index]);
                           },
                           icon: const Icon(Icons.update),
                           label: const Text('Güncelle'),
-                        )
+                        ),
                       ],
                     ),
                   );
-                }),
+                },
+            ),
           ),
         ],
       );
