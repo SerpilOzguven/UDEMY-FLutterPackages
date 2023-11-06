@@ -1,7 +1,4 @@
-// TODO Implement this library.// TODO Implement this library.// TODO Implement this library.// TODO Implement this library.
-
-
-
+// TODO Implement this library.
 import 'package:flutter/material.dart';
 import 'package:flutter_packages/packages/hive/hive_box.dart';
 import 'package:flutter_packages/packages/hive/model/amount.dart';
@@ -19,6 +16,7 @@ class _AmountPageState extends State<AmountPage> {
 
   final textController = TextEditingController();
   final amountController = TextEditingController();
+
 
   var isPlus;
 
@@ -45,7 +43,7 @@ class _AmountPageState extends State<AmountPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          addAmount(context, null);
+          addAmount(context,null);
           },
         child: const Icon(Icons.add),
       ),

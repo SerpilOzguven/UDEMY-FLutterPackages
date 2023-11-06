@@ -19,6 +19,7 @@ class AmountModelAdapter extends TypeAdapter<AmountModel> {
     return AmountModel()
       ..name = fields[0] as String
       ..age = fields[1] as double
+      ..amount = fields[3] as double
       ..isPlus = fields[2] as bool;
   }
 
@@ -40,7 +41,7 @@ class AmountModelAdapter extends TypeAdapter<AmountModel> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is AmountModelAdapter &&
-          runtimeType == other.runtimeType &&
-          typeId == other.typeId;
+          other is AmountModelAdapter &&
+              runtimeType == other.runtimeType &&
+              typeId == other.typeId;
 }
